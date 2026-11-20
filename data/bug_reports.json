@@ -1,0 +1,15 @@
+[
+  {
+    "reportId": "RPT-MWOQ8RBQ-6BBD",
+    "userId": "demo-user-lintasku",
+    "category": "payment",
+    "title": "QRIS tidak terbaca di kamera",
+    "description": "Saat membuka halaman Bayar, scanner gagal memproses kode QRIS.",
+    "currentScreen": "home",
+    "deviceInfo": "390x844 · Online",
+    "triggerSource": "shake",
+    "status": "open",
+    "createdAt": 1795163911766,
+    "updatedAt": 1795163911766
+  }
+]

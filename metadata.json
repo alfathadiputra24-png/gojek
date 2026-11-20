@@ -1,0 +1,6 @@
+{
+  "name": "Lintasku",
+  "description": "Super-app mobilitas, kuliner, kirim barang, belanja, dan pembayaran harian di Indonesia.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

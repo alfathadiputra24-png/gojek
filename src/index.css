@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --spring-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.header-gradient-lintasku {
+  background: linear-gradient(180deg, #0FA958 0%, #38C858 55%, #8BE04E 100%);
+}
+
+.dark .header-gradient-lintasku {
+  background: linear-gradient(180deg, #0B7B40 0%, #168F4A 65%, #236B36 100%);
+}
+
+.service-card-glow {
+  box-shadow:
+    0 0 0 1.5px rgba(15, 169, 88, 0.22),
+    0 8px 20px -6px rgba(15, 169, 88, 0.16);
+}
+
+.dark .service-card-glow {
+  box-shadow:
+    0 0 0 1.5px rgba(74, 222, 128, 0.26),
+    0 8px 20px -6px rgba(0, 0, 0, 0.45);
+}
+
+.bayar-pill-gradient {
+  background: linear-gradient(135deg, #00A8CC 0%, #0FA958 100%);
+  box-shadow: 0 8px 18px -4px rgba(0, 168, 204, 0.45);
+}
+
+.safe-pb {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.safe-pt {
+  padding-top: max(10px, env(safe-area-inset-top));
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 232, 240, 0.7) 25%,
+    rgba(241, 245, 249, 0.95) 50%,
+    rgba(226, 232, 240, 0.7) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s infinite linear;
+}
+
+.dark .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 41, 59, 0.75) 25%,
+    rgba(51, 65, 85, 0.9) 50%,
+    rgba(30, 41, 59, 0.75) 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes bayar-pulse {
+  0%, 100% {
+    box-shadow: 0 6px 16px -4px rgba(0, 168, 204, 0.38);
+  }
+  50% {
+    box-shadow: 0 10px 24px -2px rgba(15, 169, 88, 0.56);
+  }
+}
+
+.bayar-gentle-pulse {
+  animation: bayar-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(36px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet map polish */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  z-index: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .bayar-gentle-pulse {
+    animation: none !important;
+  }
+}
